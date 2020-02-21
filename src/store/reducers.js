@@ -9,3 +9,13 @@ export const moment = (state = {}, { type, ...payload }) => {
             return state
     }
 }
+
+export const note = (state = {}, { type, ...payload }) => {
+    console.log(payload)
+    switch (type) {
+        case ACTIONS.SET_NOTE:
+            return { ...state, ...payload }
+        default:
+            return state
+    }
+}

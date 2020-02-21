@@ -1,3 +1,7 @@
+.app{
+    min-height: 90vh;
+}
+
 .theme-d1{
     background-color: #ebebeb;
 }
