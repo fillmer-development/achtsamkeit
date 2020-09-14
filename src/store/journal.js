@@ -25,7 +25,6 @@ export const updateJournal = (timestamp, item) => ({
 
 
 export const entries = (state = {}, { type, ...payload }) => {
-    console.log(state, payload)
     switch (type) {
         case JOURNAL_UPDATED:
             return {
