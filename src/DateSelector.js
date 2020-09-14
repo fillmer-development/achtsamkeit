@@ -10,16 +10,16 @@ const DateSelector = ({ date, setDate = f => f }) => {
     useEffect(goToToday, [])
     return (
         <div className="date-selector">
-            <div onClick={() => setDate(getPrevDay(date))}>
-                <Arrow className='left' />
+            <div className='left' onClick={() => setDate(getPrevDay(date))}>
+                <Arrow />
             </div>
             <div
                 onClick={goToToday}
                 className="date">{printDate(date)}</div>
-            <div onClick={() => setDate(getNextDay(date))}>
-                <Arrow className='right' />
+            <div className='right' onClick={() => setDate(getNextDay(date))}>
+                <Arrow />
             </div>
-        </div>
+        </div >
     )
 }
 

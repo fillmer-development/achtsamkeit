@@ -1,0 +1,22 @@
+$color-accent: cornflowerblue;
+$color-flat: whitesmoke;
+$color-dark: #aaa;
+$color-background: white;
+
+@mixin clickable {
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+        opacity: 0.7;
+    }
+    &:active {
+        opacity: 0.3;
+    }
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    max-width: 600px;
+    margin: auto;
+}

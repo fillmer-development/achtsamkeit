@@ -1,0 +1,27 @@
+.date-selector {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $color-flat;
+    color: $color-dark;
+
+    div {
+        @include clickable();
+    }
+
+    div.left,
+    div.right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2rem;
+        height: 2rem;
+    }
+    .left {
+        transform: rotate(90deg);
+    }
+    .right {
+        transform: rotate(-90deg);
+    }
+}
