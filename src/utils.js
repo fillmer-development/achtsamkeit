@@ -18,3 +18,14 @@ export const printDate = timestamp => {
     return d.toLocaleDateString()
     // return `${d.getDay()}.${d.getMonth()}.${d.getFullYear()}`
 }
+
+export const scale = (range, target) => input => {
+    const [min, max] = range
+    const [tMin, tMax] = target
+    return ((input - min) / max) * (tMax - tMin) + tMin
+}
+
+export const mapProductivityToHSL = prod => {
+    const hue = scale([0, 100], [240, 360])(prod)
+    return `hsl(${hue}, 100%, 75%)`
+}

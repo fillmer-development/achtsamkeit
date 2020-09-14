@@ -5,9 +5,21 @@ import Moments from './Moment';
 import Note from './Note';
 import { updateJournal } from './store/journal';
 import './style.scss';
+import RangeInput from './RangeInput';
+import { mapProductivityToHSL } from './utils';
+import { useEffect } from 'react';
+import Productivity from './Productivity';
 
 const App = ({ timestamp, entry = {}, updateFactory = f => f }) => {
   const update = updateFactory(timestamp)
+  useEffect(() => {
+    const stylesheet = document.styleSheets[0]
+    stylesheet.removeRule(0)
+    stylesheet.addRule(
+      'body',
+      `background-color: ${mapProductivityToHSL(entry.productivity)}`,
+      0)
+  }, [entry.productivity])
   return (
     <div className="app">
       <DateSelector />
@@ -18,6 +30,10 @@ const App = ({ timestamp, entry = {}, updateFactory = f => f }) => {
       <Note
         value={entry.note || ""}
         setValue={note => update({ ...entry, note })}
+      />
+      <Productivity
+        value={entry.productivity || ""}
+        setValue={productivity => update({ ...entry, productivity })}
       />
     </div>
   );

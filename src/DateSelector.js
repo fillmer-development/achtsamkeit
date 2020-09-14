@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Arrow from './icons/Arrow'
 import { setDate } from './store/journal'
-import { getPrevDay, getNextDay, printDate } from './dateUtils'
+import { getPrevDay, getNextDay, printDate } from './utils'
 import { useEffect } from 'react'
 
 const DateSelector = ({ date, setDate = f => f }) => {

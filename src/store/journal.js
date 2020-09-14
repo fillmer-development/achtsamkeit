@@ -1,5 +1,5 @@
 import { combineReducers } from "redux"
-import { normalizeTimestamp } from "../dateUtils"
+import { normalizeTimestamp } from "../utils"
 
 const JOURNAL_DATE_SET = 'journal/date_set'
 
