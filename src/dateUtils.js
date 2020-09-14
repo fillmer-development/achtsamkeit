@@ -1,5 +1,4 @@
 export const getOffsetDay = offset => timestamp => {
-    console.log(timestamp)
     const date = new Date(timestamp)
     date.setDate(date.getDate() + offset)
     return date.getTime()
@@ -17,5 +16,5 @@ export const normalizeTimestamp = timestamp => {
 export const printDate = timestamp => {
     const d = new Date(timestamp)
     return d.toLocaleDateString()
-    return `${d.getDay()}.${d.getMonth()}.${d.getFullYear()}`
+    // return `${d.getDay()}.${d.getMonth()}.${d.getFullYear()}`
 }

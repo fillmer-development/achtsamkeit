@@ -19,30 +19,18 @@ export const current = (state = "", { type, ...payload }) => {
 
 const JOURNAL_UPDATED = 'journal/update'
 
-export const update_journal = (date, payload) => ({
-    type: JOURNAL_UPDATED, date, payload
+export const updateJournal = (timestamp, item) => ({
+    type: JOURNAL_UPDATED, timestamp, item
 })
 
-export const entry = (state = {}, action) => {
-    switch (action.type) {
-        case JOURNAL_UPDATED:
-            return {
-                ...state
-                //note, moment, productivity,todo... 
-            }
 
-        default:
-            return state
-    }
-}
-
-
-export const entries = (state = {}, action) => {
-    switch (action.type) {
+export const entries = (state = {}, { type, ...payload }) => {
+    console.log(state, payload)
+    switch (type) {
         case JOURNAL_UPDATED:
             return {
                 ...state,
-                [action.date]: entry(state[action.date], action)
+                [payload.timestamp]: payload.item
             }
 
         default:

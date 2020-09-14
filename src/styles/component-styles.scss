@@ -1,10 +1,19 @@
+#root {
+    height: 100%;
+}
+.app {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 100%;
+}
+
 .date-selector {
     font-size: 2rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: $color-flat;
-    color: $color-dark;
 
     div {
         @include clickable();
