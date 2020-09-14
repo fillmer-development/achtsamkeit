@@ -1,0 +1,22 @@
+@startuml
+
+title Tag wechseln
+
+
+start
+
+:Date Delta ändern;
+
+if (Daten vorhanden) then (yes)
+:Daten unter Datum speichern;
+endif
+:neues Datum berechnen;
+:Daten unter Datumsschlüssel laden;
+note right
+    Die Daten werden zentral geladen und 
+    an die jeweilgen Reducer weitergegeben   
+end note
+end
+
+
+@endumla

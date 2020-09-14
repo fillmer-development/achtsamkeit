@@ -1,16 +1,18 @@
 import { createStore, combineReducers } from 'redux'
-import CONFIG from 'constants'
+import { journal } from './journal'
 
-const { LOCALSTORAGE } = CONFIG
+const LOCALSTORAGE = 'achtsamkeit-data'
 
 const datastring = localStorage.getItem(LOCALSTORAGE)
 const data = datastring ? JSON.parse(datastring) : undefined
 
 export const store = createStore(combineReducers({
-
+    journal
 }), data)
 
 store.subscribe(() => {
-    state = JSON.stringify(store.getState())
+    const state = JSON.stringify(store.getState())
     localStorage.setItem(LOCALSTORAGE, state)
 })
+
+window.store = store

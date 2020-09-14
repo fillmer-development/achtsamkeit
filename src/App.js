@@ -1,11 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { store } from './store/store';
+import './style.scss'
 
-function App() {
-  return (
-    <div>
+class App extends Component {
+  componentDidMount() {
+    this.unsubscribe = store.subscribe(() => this.forceUpdate())
+  }
 
-    </div>
-  );
+  componentWillUnmount() {
+    this.unsubscribe()
+  }
+
+  render() {
+    return (
+      <div className="app">
+
+      </div>
+    );
+  }
 }
 
 export default App;
