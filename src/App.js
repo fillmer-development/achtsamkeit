@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
-import { store } from './store/store';
 import './style.scss'
+import { connect } from 'react-redux';
+import { setDate } from './store/journal';
+import { useEffect } from 'react';
 
-class App extends Component {
-  componentDidMount() {
-    this.unsubscribe = store.subscribe(() => this.forceUpdate())
-  }
-
-  componentWillUnmount() {
-    this.unsubscribe()
-  }
-
-  render() {
-    return (
-      <div className="app">
-
-      </div>
-    );
-  }
+const App = ({ date, setDate = f => f }) => {
+  useEffect(setDate, [])
+  return (
+    <div className="app">
+      {date}
+    </div>
+  );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  date: state.journal.current
+})
+
+const mapDispatchToProps = dispatch => ({
+  setDate: () => dispatch(setDate((new Date()).toLocaleDateString()))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
