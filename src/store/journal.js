@@ -1,9 +1,10 @@
 import { combineReducers } from "redux"
+import { normalizeTimestamp } from "../dateUtils"
 
 const JOURNAL_DATE_SET = 'journal/date_set'
 
-export const setDate = date => ({
-    type: JOURNAL_DATE_SET, date
+export const setDate = timestamp => ({
+    type: JOURNAL_DATE_SET, date: normalizeTimestamp(timestamp)
 })
 
 

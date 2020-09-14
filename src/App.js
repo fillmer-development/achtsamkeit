@@ -3,22 +3,16 @@ import './style.scss'
 import { connect } from 'react-redux';
 import { setDate } from './store/journal';
 import { useEffect } from 'react';
+import DateSelector from './DateSelector';
 
-const App = ({ date, setDate = f => f }) => {
+const App = () => {
   useEffect(setDate, [])
   return (
     <div className="app">
-      {date}
+      <DateSelector />
     </div>
   );
 }
 
-const mapStateToProps = state => ({
-  date: state.journal.current
-})
 
-const mapDispatchToProps = dispatch => ({
-  setDate: () => dispatch(setDate((new Date()).toLocaleDateString()))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
