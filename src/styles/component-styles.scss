@@ -6,6 +6,7 @@
     flex-flow: column nowrap;
     justify-content: flex-start;
     height: 100%;
+    width: 100%;
 }
 
 .date-selector {
@@ -32,6 +33,13 @@
 }
 
 .productivity {
+    background-color: $color-flat;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     input {
         width: 100%;
     }

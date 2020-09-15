@@ -15,7 +15,7 @@ $color-background: white;
 }
 
 * {
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -27,17 +27,16 @@ body {
     color: $color-dark;
 }
 
-h2 {
-    color: $color-flat;
-}
-
 textarea {
     font-family: inherit;
     background-color: $color-flat;
     padding: 0.5rem;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     outline: none;
     width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 2rem;
     height: 150px;
 }
