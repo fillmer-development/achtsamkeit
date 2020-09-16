@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e006861edfadfbcf8d67fb5d19b12fc3",
+    "revision": "659afee437eb8fa2aefc3bc878100a81",
     "url": "/achtsamkeit/index.html"
   },
   {
-    "revision": "da6b761f97a88c121212",
-    "url": "/achtsamkeit/static/css/main.db7a1fb9.chunk.css"
+    "revision": "46e8e5313bb9c2172882",
+    "url": "/achtsamkeit/static/css/main.c45c7c2b.chunk.css"
   },
   {
     "revision": "2b66eb873cf20cf13351",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/achtsamkeit/static/js/2.90e27371.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "da6b761f97a88c121212",
-    "url": "/achtsamkeit/static/js/main.36665440.chunk.js"
+    "revision": "46e8e5313bb9c2172882",
+    "url": "/achtsamkeit/static/js/main.487eb1c0.chunk.js"
   },
   {
     "revision": "7d4cc2d2169d20eb72a6",
