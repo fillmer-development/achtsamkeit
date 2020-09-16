@@ -33,15 +33,17 @@
 }
 
 .productivity {
-    background-color: $color-flat;
-    border-radius: 1rem;
-    padding: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    input {
-        width: 100%;
+    div {
+        border-radius: 1rem;
+        padding: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+
+        input {
+            width: 100%;
+        }
     }
 }
 
