@@ -6,6 +6,7 @@ import Note from './Note';
 import Productivity from './Productivity';
 import { updateJournal } from './store/journal';
 import './style.scss';
+import TodoList from './TodoList';
 
 const App = ({ timestamp, entry = {}, updateFactory = f => f }) => {
   const update = updateFactory(timestamp)
@@ -17,6 +18,7 @@ const App = ({ timestamp, entry = {}, updateFactory = f => f }) => {
         value={entry.moment || ""}
         setValue={moment => update({ ...entry, moment })}
       />
+      <TodoList />
       <Productivity
         value={entry.productivity || ""}
         setValue={productivity => update({ ...entry, productivity })}

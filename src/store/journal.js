@@ -1,5 +1,6 @@
 import { combineReducers } from "redux"
 import { normalizeTimestamp } from "../utils"
+import { TASK_CREATED, TASK_DELETED, todoList } from "./todos"
 
 const JOURNAL_DATE_SET = 'journal/date_set'
 
@@ -30,6 +31,16 @@ export const entries = (state = {}, { type, ...payload }) => {
             return {
                 ...state,
                 [payload.timestamp]: payload.item
+            }
+        case TASK_CREATED:
+        case TASK_DELETED:
+            let today = state[payload.timestamp] || {}
+            return {
+                ...state,
+                [payload.timestamp]: {
+                    ...today,
+                    todos: todoList(today.todos, { type, ...payload })
+                }
             }
 
         default:

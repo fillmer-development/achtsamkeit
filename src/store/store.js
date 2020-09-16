@@ -1,5 +1,6 @@
 import { createStore, combineReducers } from 'redux'
 import { journal } from './journal'
+import { todos } from './todos'
 
 const LOCALSTORAGE = 'achtsamkeit-data'
 
@@ -7,7 +8,7 @@ const datastring = localStorage.getItem(LOCALSTORAGE)
 const data = datastring ? JSON.parse(datastring) : undefined
 
 export const store = createStore(combineReducers({
-    journal
+    journal, todos
 }), data)
 
 store.subscribe(() => {
