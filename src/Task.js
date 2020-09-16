@@ -5,7 +5,7 @@ import TextInput from './TextInput'
 const Task = ({ id, content, done = false, setContent = f => f,
     onToggleDone = f => f, onDelete = f => f }) => {
     const [edit, setEdit] = useState(false)
-    useEffect(() => { if (!content) onDelete(id) }, [content])
+    useEffect(() => { if (!content && !edit) onDelete(id) }, [content, edit])
 
     if (edit)
         return (

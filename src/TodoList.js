@@ -8,7 +8,13 @@ const TodoList = ({ current, entries, tasks, createTask = f => f, ...props }) =>
     const today = entries[current] || {}
     const items = today.todos || []
     const [newTask, setNewTask] = useState()
-    useEffect(() => { setNewTask() }, [items])
+
+    const onAddNewTask = () => {
+        if (newTask)
+            createTask(current, newTask)
+        setNewTask("")
+    }
+
     return (
         <div className='todo-list'>
             <h2>Todo</h2>
@@ -24,7 +30,7 @@ const TodoList = ({ current, entries, tasks, createTask = f => f, ...props }) =>
                 <div className="task">
                     <TextInput placeholder="neue Aufgabe" setValue={setNewTask} value={newTask} />
                     <div className="add button"
-                        onClick={() => { if (newTask) createTask(current, newTask) }}
+                        onClick={onAddNewTask}
                     >+</div>
                 </div>
             }

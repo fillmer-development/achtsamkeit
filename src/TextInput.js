@@ -6,7 +6,7 @@ const TextInput = ({ value, setValue = f => f, ...props }) => {
             {...props}
             type="text"
             className='text-input'
-            defaultValue={value}
+            value={value}
             onChange={e => setValue(e.target.value)} />
     )
 }
