@@ -23,7 +23,7 @@ const TodoList = ({ current, entries, tasks, createTask = f => f, ...props }) =>
             {items.length < 5 &&
                 <div className="task">
                     <TextInput placeholder="neue Aufgabe" setValue={setNewTask} value={newTask} />
-                    <div className="button"
+                    <div className="add button"
                         onClick={() => { if (newTask) createTask(current, newTask) }}
                     >+</div>
                 </div>

@@ -7,6 +7,7 @@
     justify-content: flex-start;
     height: 100%;
     width: 100%;
+    padding: 0.5rem;
 }
 
 .date-selector {
@@ -49,6 +50,7 @@
 
 .todo-list {
     .task {
+        user-select: none;
         border-radius: 2rem;
         background-color: $color-flat;
         margin: 0.5rem 0;
@@ -69,6 +71,9 @@
         }
         input {
             background-color: inherit;
+        }
+        .add {
+            width: 3rem;
         }
     }
     .done > :nth-child(1) {
