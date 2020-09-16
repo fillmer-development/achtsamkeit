@@ -1,6 +1,6 @@
 # Dein persönliches Tagebuch für mehr Achtsamkeit im Alltag
 
-Diese einfache App ermöglicht es dir, schnell und einfach dein Tagebuch zu führen. 
+[Diese einfache App](https://fillmer-development.github.io/achtsamkeit) ermöglicht es dir, schnell und einfach dein Tagebuch zu führen. 
 
 Dabei ist jede Seite in verschiedene Bereiche aufgeteilt: 
 
