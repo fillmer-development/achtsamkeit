@@ -1,11 +1,12 @@
 import React from 'react'
 
-const TextInput = ({ value, setValue = f => f }) => {
+const TextInput = ({ value, setValue = f => f, ...props }) => {
     return (
         <input
+            {...props}
             type="text"
             className='text-input'
-            value={value}
+            defaultValue={value}
             onChange={e => setValue(e.target.value)} />
     )
 }

@@ -10,22 +10,22 @@ const TodoList = ({ current, entries, tasks, createTask = f => f, ...props }) =>
     const [newTask, setNewTask] = useState()
     useEffect(() => { setNewTask() }, [items])
     return (
-        <div>
+        <div className='todo-list'>
+            <h2>Todo</h2>
             {items.map(id => (
                 <Task
-                    onToggleDone={props.onToggleDone}
+                    onToggleDone={props.toggleDone}
                     setContent={props.editTask}
-
                     onDelete={props.onDelete(current)}
-                    {...tasks[id]}
+                    {...tasks[id]} id={id}
                     key={id} />
             ))}
             {items.length < 5 &&
-                <div>
-                    <TextInput setValue={setNewTask} value={newTask} />
-                    <button
+                <div className="task">
+                    <TextInput placeholder="neue Aufgabe" setValue={setNewTask} value={newTask} />
+                    <div className="button"
                         onClick={() => { if (newTask) createTask(current, newTask) }}
-                    >save</button>
+                    >+</div>
                 </div>
             }
         </div>

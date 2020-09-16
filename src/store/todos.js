@@ -31,8 +31,8 @@ export const todos = (state = {}, { type, ...payload }) => {
         case TASK_EDITED:
         case TASK_DONE:
             return {
-                state,
-                [payload.id]: { ...state[payload.id], payload }
+                ...state,
+                [payload.id]: { ...state[payload.id], ...payload }
             }
         case TASK_DELETED:
             delete state[payload.id]

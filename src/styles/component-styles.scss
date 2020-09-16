@@ -44,3 +44,61 @@
         width: 100%;
     }
 }
+
+.todo-list {
+    .task {
+        border-radius: 2rem;
+        background-color: $color-flat;
+        margin: 0.5rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: hidden;
+
+        > *:nth-child(1) {
+            padding: 0.5rem;
+            padding-left: 1rem;
+            flex: 1;
+            font-size: large;
+        }
+
+        .checkbox {
+            padding: 0.5rem;
+        }
+        input {
+            background-color: inherit;
+        }
+    }
+    .done > :nth-child(1) {
+        text-decoration: line-through;
+    }
+    .edit {
+        border: 1px solid $color-accent;
+        background-color: white;
+    }
+    .checkmark {
+        display: inline-block;
+        transform: rotate(45deg);
+        height: 1.25rem;
+        border-bottom: 4px solid $color-dark;
+        border-right: 4px solid $color-dark;
+        position: relative;
+        bottom: 1px;
+    }
+    .button {
+        @include clickable();
+        background-color: $color-flat;
+        height: 2rem;
+        width: 2rem;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        svg {
+            fill: $color-dark;
+            max-width: 100%;
+        }
+    }
+}
